@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products</title>
+</head>
+<body>
+
+<h2>Our Products</h2>
+
+<p>Dress - ₹999</p>
+
+<button onclick="buyNow()">Buy Now</button>
+
+<br><br>
+<a href="index.html">Back to Home</a>
+
+<script>
+function buyNow() {
+  dataLayer.push({
+    event: "purchase",
+    ecommerce: {
+      transaction_id: "T12345",
+      value: 999,
+      currency: "INR",
+      items: [{
+        item_name: "Dress",
+        price: 999,
+        quantity: 1
+      }]
+    }
+  });
+
+  window.location.href = "thankyou.html";
+}
+</script>
+
+</body>
+</html>
